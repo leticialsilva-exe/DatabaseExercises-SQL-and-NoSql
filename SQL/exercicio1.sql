@@ -31,7 +31,7 @@ order by num_filmes desc;
 --  Exercício 2: Crie uma consulta para cada consulta do exercício anterior que retorne 
 -- o numero de registros encontrados pela busca
   SELECT COUNT(*) FROM (
-    SELECT a.actor_id, a.first_name, a.last_name, count(f.film_id) as num_filmes
+    SELECT a.actor_id, a.last_name, count(f.film_id) as num_filmes
     FROM actor a
     JOIN film_actor fa ON a.actor_id = fa.actor_id
     JOIN film f ON fa.film_id = f.film_id
@@ -39,7 +39,7 @@ order by num_filmes desc;
   ) AS subquery;
 
   SELECT COUNT(*) FROM (
-    SELECT a.actor_id, a.first_name, a.last_name, count(f.film_id) as num_filmes
+    SELECT a.actor_id, a.last_name, count(f.film_id) as num_filmes
     FROM actor a
     JOIN film_actor fa ON a.actor_id = fa.actor_id
     JOIN film f ON fa.film_id = f.film_id
